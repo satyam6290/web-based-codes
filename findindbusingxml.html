@@ -1,0 +1,98 @@
+<html>
+  <head>
+   <script language="javascript">   
+    var xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+    var count=2;
+    function loadXML(xmlfile)
+    {
+    xmlDoc.load(xmlfile);
+    xmlobj=xmlDoc.documentElement;
+    var x=document.f1.t1.value;
+    var i=0;
+    for(var j=0;j<5;j++)
+    {
+    if((xmlobj.childNodes(j).childNodes(i).firstChild.text)==x)
+    {
+    for(var i=1;i<8;i++)
+    {
+    alert(xmlobj.childNodes(j).childNodes(i).firstChild.text);
+    document.getElementById("t"+count).value=xmlobj.childNodes(j).childNodes(i).firstChild.text;
+    count=count+1;
+    }
+    }
+    }
+    }
+   </script>
+     </head>
+  <body>
+  <form name="f1">
+      <table border="0">
+          <tr><td>ENTER NAME:</td><td>
+          <input type="text" name="t1"></td></tr>
+           <tr><td></td><td>
+          <input type="button" value="search" onclick="loadXML('xmlfile.xml')"></td></tr>
+           <tr><td>YOUR PASSWORD</td><td><input type="password" id="t2"></td></tr>
+           <tr><td>YOUR emailid</td><td><input type="text" id="t3"></td></tr>
+           <tr><td>YOUR phone number</td><td><input type="text" id="t4"></td></tr>
+           <tr><td>YOUR gender</td><td><input type="text" id="t5"></td></tr>
+           <tr><td>YOUR DOB</td><td><input type="text" id="t6"></td></tr>
+           <tr><td>YOUR Language</td><td><input type="text" id="t7"></td></tr>
+              
+          
+      </table>
+  </form>
+  </body>
+</html>
+
+
+xmlfile.xml
+
+<?xml version="1.0" encoding="UTF-8" ?> 
+ <userinfo>
+ <user>
+  <name>vignesh</name> 
+  <passward>9848568058</passward> 
+  <emailid>rvvssvraju@gmail.com</emailid> 
+  <phone>9492387549</phone> 
+  <gander>male</gander> 
+  <DOB>02/08/1987</DOB> 
+  <language>telugu,english</language> 
+  </user>
+ <user>
+  <name>varma</name> 
+  <passward>9966229587</passward> 
+  <emailid>varma_jami@gmail.com</emailid> 
+  <phone>9966229587</phone> 
+  <gander>male</gander> 
+  <DOB>06/08/1985</DOB> 
+  <language>telugu,english</language> 
+  </user>
+ <user>
+  <name>bala</name> 
+  <passward>9948817170</passward> 
+  <emailid>asvbk4u@gmail.com</emailid> 
+  <phone>9948817170</phone> 
+  <gander>male</gander> 
+  <DOB>02/08/1987</DOB> 
+  <language>telugu,english,hindi</language> 
+  </user>
+
+<user>
+  <name>krishna</name> 
+  <passward>9652655787</passward> 
+  <emailid>murali.007p@gmail.com</emailid> 
+  <phone>9652655787</phone> 
+  <gander>male</gander> 
+  <DOB>02/08/1987</DOB> 
+  <language>telugu,english,hindi</language> 
+  </user>
+<user>
+  <name>Krishna1</name> 
+  <passward>9291537075</passward> 
+  <emailid>libra.dskp@gmail.com</emailid> 
+  <phone>9291537075</phone> 
+  <gander>mail</gander> 
+  <DOB>02/08/1987</DOB> 
+  <language>telugu,english,hindi</language> 
+  </user>
+</userinfo>

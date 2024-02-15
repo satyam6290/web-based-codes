@@ -1,0 +1,58 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class writecookie extends HttpServlet
+{
+    public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
+    {
+        String s=req.getParameter("t1");
+        String ph=req.getParameter("t2");
+        Cookie c1=new Cookie(s,ph);
+        res.addCookie(c1);
+        res.setContentType("text/html");
+        PrintWriter pw=res.getWriter();
+        pw.println("cookie is written sucessfully to client");
+        pw.close();
+    }
+}
+
+Studentdetails.html
+
+<html>
+  <head>
+    <title>student details</title>
+  </head>
+  <body>
+  <form name="f1" method="get" action="writecookie">
+      <table border="2" align="right">
+          <tr> <td> sname:</td>
+          <td><input type="text" name="t1"></td></tr>
+          <tr><td> phonenumber:</td>
+          <td> <input type="text" name="t2"></td>
+          </tr>
+          <tr><td> <input type="submit" value="submit"></td>
+          </tr>
+      </table>
+  </form>
+  </body>
+</html>
+Readcookie.java
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class readcookie extends HttpServlet
+{
+    public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
+    {
+        res.setContentType("text/html");
+        PrintWriter pw=res.getWriter();
+        Cookie c[]=null;
+        c=req.getCookies();
+        for(int i=0;i<c.length;i++)
+        {
+            pw.println(c[i].getName()+":"+c[i].getValue());
+            pw.println("<br>");
+        }
+    }        
+}

@@ -1,0 +1,117 @@
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+   <center>
+   <h1>User Profile</h1>
+   <form method="get" action="Profile.jsp">
+   <table>
+      <tr>
+          <td>Name:</td>
+          <td><input type="text" name="name"></td>
+     </tr>
+     <tr>
+          <td>e-mail id:</td>
+          <td><input type="text" name="email"></td>
+    </tr>
+    <tr>
+          <td>DOB(DD MM YYYY):</td>
+          <td><select name="dd">
+            <option>01</option><option>02</option><option>03</option><option>04</option>
+            <option>05</option><option>06</option><option>07</option><option>08</option>
+            <option>09</option><option>10</option><option>11</option><option>12</option>
+            <option>13</option><option>14</option><option>15</option><option>16</option>
+            <option>17</option><option>18</option><option>19</option><option>20</option>
+            <option>21</option><option>22</option><option>23</option><option>24</option>
+            <option>25</option><option>26</option><option>27</option><option>28</option>
+           <option>29</option><option>30</option><option>31</option>
+                </select>
+                <select name="mm">
+           <option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option>
+           <option>May</option><option>Jun</option><option>Jul</option><option>Aug</option>
+           <option>Sept</option><option>Oct</option><option>Nov</option><option>Dec</option>
+               </select>
+               <select name="yy">
+           <option>1985</option><option>1986</option><option>1987</option><option>1988</option>
+           <option>1989</option><option>1990</option><option>1991</option><option>1992</option>
+           <option>1993</option><option>1994</option><option>1995</option><option>1996</option>
+           <option>1997</option><option>1998</option><option>1999</option><option>2000</option>
+           <option>2001</option><option>2002</option><option>2003</option><option>2004</option>
+           <option>2005</option><option>2006</option><option>2007</option><option>2008</option>
+           <option>2009</option><option>2010</option>
+
+         </td>
+     </tr>
+     <tr>
+         <td>Gender:</td>
+         <td><input type="radio" name="Male" value="Male">Male
+                <input type="radio" value="Female" name="Male">Female
+        </td>
+    </tr>
+    <tr>
+       <td>City:</td>
+       <td><select name="city">
+          <option>Allahabad</option><option>Amritsar</option><option>Bangalore</option>
+          <option>Chennai</option><option>Dehradun</option><option>Faridabad</option>
+          <option>Gangtok</option><option>Hyderabad</option><option>Jaipur</option>
+          <option>Kanpur</option><option>Lucknow</option><option>Mumbai</option>
+          <option>Nagpur</option><option>Patna</option><option>Ranchi</option>
+          <option>Surat</option>
+          <option>Tirupati</option><option>Vizag</option><option>Wadi</option>
+</select></td></tr>
+<tr><td>State:</td>
+<td><select name="State">
+<option>AP</option><option>Bihar</option><option>Chandigarh</option><option>Delhi</option>
+<option>Jharkhand</option><option>Kerala</option><option>Maharashtr</option><option>TamilNad</option>
+</select></td></tr>
+<tr><td>Phone No:</td>
+<td><input type="text" name="phone"></td>
+</tr>
+<tr><td>Address</td>
+<td><textarea rows="5" cols="30" name="address"></textarea>
+</td></tr>
+</table>
+<input type="Submit" value="Submit">
+<input type="Reset" value="Reset">
+</form>
+</body>
+</center>
+</html>
+
+
+
+Profile.jsp
+
+<html>
+<body>
+<%@page contentType="text/html" import=" java.io.*,java.net.*,java.sql.*,javax.servlet.*,javax.servlet.http.*"%>
+<%
+       response.setContentType("text/html;charset=UTF-8");
+        //PrintWriter out = response.getWriter();
+        String name=request.getParameter("name");
+        String email=request.getParameter("email");
+        String dd=request.getParameter("dd");
+        String mm=request.getParameter("mm");
+        String yy=request.getParameter("yy");
+        String gender=request.getParameter("Male");
+        String city=request.getParameter("city");
+        String state=request.getParameter("State");
+        String phone=request.getParameter("phone");
+        String address=request.getParameter("address");
+        try {
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            Connection con=DriverManager.getConnection("jdbc:odbc:sample","scott","tiger");
+            Statement st=con.createStatement();
+            int n=st.executeUpdate("insert into userprofile814 values('"+name+"','"+email+"','"+dd+"','"+mm+"','"+yy+"','"+gender+"','"+city+"','"+state+"','"+phone+"','"+address+"')");
+            if(n>0)
+            out.println("<h1>Data Has Been Inserted Successfully</h1>");
+            else
+                out.println("data not inserted");
+        } catch(Exception e) {
+            out.println(e);
+        }
+%>
+</body>
+</html>
+

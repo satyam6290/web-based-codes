@@ -1,0 +1,67 @@
+Registration.html
+
+<html>
+<head>
+        <title>Registration</title>
+</head>
+<body>
+        <center><h1>Registration</h1>
+            <form method=get action="User.jsp">
+            <table>
+            <tr>
+                <td>UserName:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password:</td>
+                <td><input type="password" name="conpwd"></td>
+            </tr>
+            <tr>
+                <td>Email ID:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            
+                 <tr>
+                    <td><input type="Submit" value="Submit"></td>
+                    <td><input type="Reset" value="Reset"></td>               
+                 </tr>
+                 </table>    
+            </form>
+        </center>
+</body>
+</html>
+
+
+User.jsp
+
+<html>
+<body>
+<%@page contentType="text/html" import="java.io.*,java.sql.*,javax.servlet.*,javax.servlet.http.*"%>
+    <%
+        response.setContentType("text/html;charset=UTF-8");
+        String name=request.getParameter("name");
+        String pwd=request.getParameter("pwd"); 
+        String conpwd=request.getParameter("conpwd");
+        String email=request.getParameter("email");
+       
+
+        try
+        {
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            Connection con=DriverManager.getConnection("jdbc:odbc:servlet","scott","tiger");
+            Statement st=con.createStatement();
+            st.executeUpdate("insert into register808 values('"+name+"','"+pwd+"','"+conpwd+"','"+email+"')");
+            out.println("<h2>Data inserted successfully</h2>");
+        }
+        catch(Exception e)
+        {
+        System.out.println(e);
+        }
+    
+%>
+</body>
+</html>

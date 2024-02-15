@@ -1,0 +1,40 @@
+<HTML>
+    <HEAD>
+     <TITLE> Image coordinates </TITLE>
+     <script language="javascript">
+     function click(event)
+     {
+             document.f1.t1.value=event.screenX;
+        document.f1.t2.value=event.screenY;
+        document.f1.t3.value=event.clientX;
+        document.f1.t4.value=event.clientY;
+     }
+     function over()
+     { 
+       var str="you moved your mouse over the image";
+       document.f1.c.value=str;
+     }
+     function out()
+     {
+       document.f1.c.value=" ";
+     }
+   </script>  
+    </head>
+   
+    <body>
+    <form name="f1">
+    <a onmousedown="click(event)",
+       onmouseover="over()",
+       onmouseout="out()" >
+       <img src="Sunset.jpg" width=300 height=300></a></br>
+       message<input type="text" id="c" size="40"><br>
+       <h1>with respect to screen co-ordinates</h1>
+       X!:<input type="text" id="t1" ><br>
+       Y1:<input type="text" id="t2" ><br>
+       <h1>with respect to client co-ordinates</h1>
+       X!:<input type="text" id="t3" ><br>
+       Y1:<input type="text" id="t4" ><br>
+     </form>
+    </body>
+   </html>
+   
