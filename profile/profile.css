@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+.profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.profile img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.profile h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+.bet-history {
+  max-width: 900px;
+  margin-left: 19rem;
+  margin-top: 30px;
+  border-radius: 2rem;
+  border: 2px solid white;
+ 
+  
+}
+.bet-history table {
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+.bet-history th, .bet-history td {
+  padding: 10px;
+  
+  
+}
+.tablehead{
+  background-color: #595757;
+ 
+  
+  
+}
+.bet-history th {
+  text-align: left;
+ 
+  
+  
+}
+.winning-rate {
+  max-width: 800px;
+  margin-left: 22rem;
+  margin-top: 20px;
+}
+.winning-rate p {
+  font-size: 18px;
+}
+.profile1{
+  margin-left: -38rem;
+  margin-top: 5rem;
+  font-size: 2rem;
+
+}
+.button-edit{
+  border-radius: 10px;
+  border:1px rgb(48, 47, 47);
+  color: #393737;
+  height: 1.5rem;
+  width: 4.5rem;
+}
+.bet-head{
+  text-align: center;
+}
+.history-bet{
+  margin-top: 0.4rem;
+  margin-left: 44rem;
+  
+}
+.button-allbet{
+  border-radius: 10px;
+  border:1px rgb(48, 47, 47);
+  color: #393737;
+  height: 1.5rem;
+  width: 6rem;
+}
+/* Style the container for the boxes */
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 32rem;
+  display: inline-flex;
+  list-style: none;
+ 
+}
+
+/* Style each box */
+.box {
+  background-color: #3D3D3D;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-left: 1rem;
+ 
+  
+}
+
+/* Style the amount text */
+.box p {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* Style the description text */
+.box span {
+  font-size: 19px;
+}

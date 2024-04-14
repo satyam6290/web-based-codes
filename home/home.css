@@ -1,0 +1,97 @@
+/* Add your styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.match {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.odds {
+    font-weight: bold;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Reset default styles for list */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the navigation bar */
+.navbar {
+    margin-top: 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6b6565;
+    color: rgb(226, 21, 21);
+    padding: 10px 50px;
+}
+
+/* Style the logo */
+.logo {
+    font-size: 24px;
+}
+
+/* Style the navigation links */
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+    color: aliceblue;
+}
+
+/* Style the search bar */
+.search-bar {
+    padding: 5px;
+    /* Add more styling as needed */
+}
+.img-profile{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid rgb(166, 139, 139);
+}
